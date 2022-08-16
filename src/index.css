@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Nunito', sans-serif;;
+  scroll-behavior: smooth;
+  background-color: #CDDEFF;
+}
+
+body, ul, li, h1, h2, h3, h4, h5, h6, h7, a, p {
+  margin: 0;
+  padding: 0;
+}

@@ -2,7 +2,7 @@ import create from 'zustand';
 
 const userStore = create(set => ({
   user: null,
-  setUser: () => set((user) => ({ user }))
+  setUser: (user) => set(() => ({ user }))
 }));
 
 export default userStore;

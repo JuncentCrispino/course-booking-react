@@ -2,7 +2,7 @@ import create from 'zustand';
 
 const loginStore = create(set => ({
   isLoggedIn: false,
-  setIsLoggedIn: async () => set(state => ({ isLoggedIn: state }))
+  setIsLoggedIn: async (state) => set(() => ({ isLoggedIn: state }))
 }));
 
 export default loginStore;

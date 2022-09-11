@@ -15,8 +15,7 @@ const courseStore = create(set => ({
   setTotalResults: (totalResults) => set(() => ({ totalResults })),
   totalPages: 0,
   setTotalPages: (totalPages) => set(() => ({ totalPages })),
-  fetchingCourse: false,
-  setFetchingCourse: (fetchingCourse) => set(() => ({ fetchingCourse })),
+  emptyCourses: () => set(() => ({ courses: [] }))
 }));
 
 export default courseStore;

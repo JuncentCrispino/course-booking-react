@@ -8,7 +8,7 @@ export default function Loader() {
       <Puff
         height="80"
         width="80"
-        radisu={1}
+        radius={1}
         color="#676FA3"
         ariaLabel="puff-loading"
         wrapperStyle={{}}

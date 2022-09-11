@@ -6,6 +6,7 @@ import loginStore from './store/loginStore';
 import courseStore from './store/courseStore';
 import access from './utils/isLoggedIn';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer'
 import ProtectedRoutes from './routes/ProtectedRoutes';
 import { getCourses } from './services/course';
 import Loader from './components/Loader';
@@ -23,8 +24,6 @@ function App() {
   const sortBy = courseStore(state => state.sortBy);
   const limit = courseStore(state => state.limit);
   const page = courseStore(state => state.page);
-  const setTotalResults = courseStore(set => set.setTotalResults);
-  const setTotalPages = courseStore(set => set.setTotalPages);
 
   //views
   const Home = lazy(() => import('./views/Home'));
@@ -39,12 +38,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const [coursesData, userData] = await Promise.all([getCourses(sortBy, limit, page), access()])
-        if (coursesData.totalResults > 0) {
-          setCourses(coursesData.results)
-          setTotalResults(coursesData.totalResults)
-          setTotalPages(coursesData.totalPages)
-        }
+        const  userData = await access()
         if (userData) {
           setUser(userData);
         }
@@ -77,6 +71,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+      {/* <Footer /> */}
     </Router>
   )
 }

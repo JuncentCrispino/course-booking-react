@@ -1,0 +1,482 @@
+[
+  {
+    "course_name": "Introduction to Psychology",
+    "instructor": "John Smith",
+    "description": "Explore the fundamentals of psychology and gain insights into the human mind.",
+    "schedule": "Mondays and Wednesdays, 10:00 AM - 12:00 PM",
+    "available_slots": 20,
+    "price": 50,
+    "is_active": true,
+    "enrollees": "Alice, Bob, Charlie"
+  },
+  {
+    "course_name": "Web Development Bootcamp",
+    "instructor": "Sarah Johnson",
+    "description": "Learn web development from scratch and build interactive websites.",
+    "schedule": "Tuesdays and Thursdays, 2:00 PM - 4:00 PM",
+    "available_slots": 10,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "David, Emily, Frank"
+  },
+  {
+    "course_name": "Introduction to Spanish",
+    "instructor": "Maria Garcia",
+    "description": "Learn the basics of Spanish language and improve your communication skills.",
+    "schedule": "Mondays and Wednesdays, 6:00 PM - 8:00 PM",
+    "available_slots": 15,
+    "price": 75,
+    "is_active": true,
+    "enrollees": "Grace, Henry, Isabella"
+  },
+  {
+    "course_name": "Graphic Design Masterclass",
+    "instructor": "Michael Thompson",
+    "description": "Master the art of graphic design and create visually appealing designs.",
+    "schedule": "Fridays, 9:00 AM - 12:00 PM",
+    "available_slots": 8,
+    "price": 120,
+    "is_active": true,
+    "enrollees": "Jack, Olivia, Kevin"
+  },
+  {
+    "course_name": "Introduction to Artificial Intelligence",
+    "instructor": "Emily Wilson",
+    "description": "Explore the fascinating field of artificial intelligence and its applications.",
+    "schedule": "Saturdays, 1:00 PM - 4:00 PM",
+    "available_slots": 25,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Liam, Sophia, Mason"
+  },
+  {
+    "course_name": "Yoga and Meditation",
+    "instructor": "Jessica Roberts",
+    "description": "Relax your mind and body with yoga and meditation practices.",
+    "schedule": "Tuesdays and Thursdays, 6:00 PM - 7:30 PM",
+    "available_slots": 12,
+    "price": 60,
+    "is_active": true,
+    "enrollees": "Noah, Ava, Ethan"
+  },
+  {
+    "course_name": "Photography Fundamentals",
+    "instructor": "Andrew Davis",
+    "description": "Learn the basics of photography and capture stunning images.",
+    "schedule": "Mondays, 3:00 PM - 5:00 PM",
+    "available_slots": 18,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Oliver, Mia, Benjamin"
+  },
+  {
+    "course_name": "Creative Writing Workshop",
+    "instructor": "Sophie Mitchell",
+    "description": "Unleash your creativity and enhance your writing skills in this workshop.",
+    "schedule": "Wednesdays, 6:00 PM - 8:00 PM",
+    "available_slots": 10,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Emma, Alexander, Abigail"
+  },
+  {
+    "course_name": "Introduction to Economics",
+    "instructor": "Daniel Lee",
+    "description": "Learn the basic principles of economics and understand economic systems.",
+    "schedule": "Fridays, 2:00 PM - 4:00 PM",
+    "available_slots": 15,
+    "price": 50,
+    "is_active": true,
+    "enrollees": "James, Charlotte, Harper"
+  },
+  {
+    "course_name": "Mobile App Development",
+    "instructor": "Ryan Thompson",
+    "description": "Build mobile applications for Android and iOS platforms.",
+    "schedule": "Tuesdays and Thursdays, 4:00 PM - 6:00 PM",
+    "available_slots": 10,
+    "price": 110,
+    "is_active": true,
+    "enrollees": "William, Amelia, Daniel"
+  },
+  {
+    "course_name": "Fitness and Nutrition",
+    "instructor": "Natalie Johnson",
+    "description": "Learn about fitness techniques and proper nutrition for a healthy lifestyle.",
+    "schedule": "Saturdays, 10:00 AM - 11:30 AM",
+    "available_slots": 20,
+    "price": 75,
+    "is_active": true,
+    "enrollees": "Michael, Sofia, Henry"
+  },
+  {
+    "course_name": "Data Science Fundamentals",
+    "instructor": "Olivia Parker",
+    "description": "Explore the world of data science and learn essential concepts and techniques.",
+    "schedule": "Mondays and Wednesdays, 2:00 PM - 4:00 PM",
+    "available_slots": 15,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Elijah, Elizabeth, David"
+  },
+  {
+    "course_name": "Painting Workshop",
+    "instructor": "Victoria Hughes",
+    "description": "Discover your artistic talent and create beautiful paintings.",
+    "schedule": "Fridays, 6:00 PM - 8:00 PM",
+    "available_slots": 8,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Ella, Alexander, Grace"
+  },
+  {
+    "course_name": "Introduction to Computer Science",
+    "instructor": "Jacob Martinez",
+    "description": "Learn the basics of computer science and programming concepts.",
+    "schedule": "Tuesdays and Thursdays, 10:00 AM - 12:00 PM",
+    "available_slots": 12,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Liam, Harper, Benjamin"
+  },
+  {
+    "course_name": "Digital Marketing Strategies",
+    "instructor": "Sophia Anderson",
+    "description": "Master the strategies and techniques of digital marketing.",
+    "schedule": "Wednesdays, 4:00 PM - 6:00 PM",
+    "available_slots": 10,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "James, Mia, Alexander"
+  },
+  {
+    "course_name": "Introduction to Music Theory",
+    "instructor": "Daniel Green",
+    "description": "Learn the fundamentals of music theory and understand musical concepts.",
+    "schedule": "Mondays and Wednesdays, 6:00 PM - 7:30 PM",
+    "available_slots": 15,
+    "price": 65,
+    "is_active": true,
+    "enrollees": "Olivia, Ethan, Charlotte"
+  },
+  {
+    "course_name": "Public Speaking Mastery",
+    "instructor": "Sophie Lewis",
+    "description": "Develop effective public speaking skills and boost your confidence.",
+    "schedule": "Fridays, 4:00 PM - 6:00 PM",
+    "available_slots": 10,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Noah, Ava, William"
+  },
+  {
+    "course_name": "Introduction to Physics",
+    "instructor": "Andrew Scott",
+    "description": "Discover the principles of physics and their applications in the real world.",
+    "schedule": "Tuesdays and Thursdays, 2:00 PM - 4:00 PM",
+    "available_slots": 20,
+    "price": 60,
+    "is_active": true,
+    "enrollees": "Emma, Oliver, Harper"
+  },
+  {
+    "course_name": "Cooking Essentials",
+    "instructor": "Isabella Adams",
+    "description": "Learn essential cooking techniques and prepare delicious meals.",
+    "schedule": "Saturdays, 12:00 PM - 2:00 PM",
+    "available_slots": 12,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Ethan, Mia, Benjamin"
+  },
+  {
+    "course_name": "Creative Photography",
+    "instructor": "Lucas Mitchell",
+    "description": "Explore your creativity through photography and capture unique images.",
+    "schedule": "Mondays and Wednesdays, 4:00 PM - 6:00 PM",
+    "available_slots": 15,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Liam, Ava, Noah"
+  },
+  {
+    "course_name": "Financial Management",
+    "instructor": "Sophia Davis",
+    "description": "Learn effective financial management strategies for personal and business use.",
+    "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
+    "available_slots": 10,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "Oliver, Charlotte, William"
+  },
+  {
+    "course_name": "Introduction to Sociology",
+    "instructor": "Gabriel Wilson",
+    "description": "Gain insights into human social behavior and the dynamics of society.",
+    "schedule": "Fridays, 10:00 AM - 12:00 PM",
+    "available_slots": 18,
+    "price": 50,
+    "is_active": true,
+    "enrollees": "Emma, Benjamin, Grace"
+  },
+  {
+    "course_name": "Beginner's Guitar Lessons",
+    "instructor": "Ryan Baker",
+    "description": "Learn to play the guitar from scratch and strum your favorite songs.",
+    "schedule": "Wednesdays, 6:00 PM - 8:00 PM",
+    "available_slots": 8,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Noah, Mia, Alexander"
+  },
+  {
+    "course_name": "Introduction to Business",
+    "instructor": "Victoria Peterson",
+    "description": "Learn the basics of business management and entrepreneurship.",
+    "schedule": "Mondays and Wednesdays, 2:00 PM - 4:00 PM",
+    "available_slots": 15,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Liam, Ava, Benjamin"
+  },
+  {
+    "course_name": "Digital Illustration",
+    "instructor": "Emily Cooper",
+    "description": "Learn digital illustration techniques and create stunning artwork.",
+    "schedule": "Tuesdays and Thursdays, 4:00 PM - 6:00 PM",
+    "available_slots": 12,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Oliver, Mia, Grace"
+  },
+  {
+    "course_name": "Entrepreneurship 101",
+    "instructor": "Nathan Turner",
+    "description": "Gain the knowledge and skills to start and run a successful business.",
+    "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+    "available_slots": 20,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "Ethan, Charlotte, William"
+  },
+  {
+    "course_name": "Introduction to Astronomy",
+    "instructor": "Sophie Adams",
+    "description": "Explore the mysteries of the universe and learn about celestial objects.",
+    "schedule": "Mondays and Wednesdays, 6:00 PM - 7:30 PM",
+    "available_slots": 15,
+    "price": 60,
+    "is_active": true,
+    "enrollees": "Emma, Oliver, Ava"
+  },
+  {
+    "course_name": "Personal Development and Growth",
+    "instructor": "Jacob Thompson",
+    "description": "Discover techniques for personal growth and self-improvement.",
+    "schedule": "Fridays, 4:00 PM - 6:00 PM",
+    "available_slots": 10,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Noah, Mia, Benjamin"
+  },
+  {
+    "course_name": "Introduction to Chemistry",
+    "instructor": "Isabella Parker",
+    "description": "Learn the basic principles of chemistry and explore chemical reactions.",
+    "schedule": "Tuesdays and Thursdays, 2:00 PM - 4:00 PM",
+    "available_slots": 20,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Liam, Ava, William"
+  },
+  {
+    "course_name": "Baking and Pastry Arts",
+    "instructor": "Sophia Green",
+    "description": "Master the art of baking and create delicious pastries and desserts.",
+    "schedule": "Saturdays, 12:00 PM - 2:00 PM",
+    "available_slots": 12,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Ethan, Mia, Grace"
+  },
+  {
+    "course_name": "Creative Writing Masterclass",
+    "instructor": "Lucas Turner",
+    "description": "Hone your creative writing skills and craft compelling stories.",
+    "schedule": "Mondays and Wednesdays, 4:00 PM - 6:00 PM",
+    "available_slots": 15,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Oliver, Ava, Benjamin"
+  },
+  {
+    "course_name": "Marketing Fundamentals",
+    "instructor": "Emily Wilson",
+    "description": "Learn the basics of marketing and develop effective marketing strategies.",
+    "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
+    "available_slots": 10,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "Emma, Mia, Alexander"
+  },
+  {
+    "course_name": "Introduction to Film Production",
+    "instructor": "Michael Scott",
+    "description": "Explore the art of film production and learn the basics of filmmaking.",
+    "schedule": "Fridays, 10:00 AM - 12:00 PM",
+    "available_slots": 18,
+    "price": 60,
+    "is_active": true,
+    "enrollees": "Elijah, Olivia, Jack"
+  },
+  {
+    "course_name": "Beginner's Piano Lessons",
+    "instructor": "Sarah Baker",
+    "description": "Learn to play the piano from scratch and master basic musical concepts.",
+    "schedule": "Wednesdays, 6:00 PM - 8:00 PM",
+    "available_slots": 8,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Noah, Mia, Grace"
+  },
+  {
+    "course_name": "Introduction to Marketing Analytics",
+    "instructor": "Sophia Davis",
+    "description": "Learn how to analyze marketing data and derive actionable insights.",
+    "schedule": "Mondays and Wednesdays, 2:00 PM - 4:00 PM",
+    "available_slots": 15,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Liam, Ava, Benjamin"
+  },
+  {
+    "course_name": "Drawing Techniques",
+    "instructor": "Gabriel Wilson",
+    "description": "Master various drawing techniques and create stunning artwork.",
+    "schedule": "Tuesdays and Thursdays, 4:00 PM - 6:00 PM",
+    "available_slots": 12,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Oliver, Mia, Grace"
+  },
+  {
+    "course_name": "Leadership and Management",
+    "instructor": "Emily Cooper",
+    "description": "Develop effective leadership and management skills for personal and professional growth.",
+    "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+    "available_slots": 20,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "Ethan, Charlotte, William"
+  },
+  {
+    "course_name": "World History",
+    "instructor": "Lucas Mitchell",
+    "description": "Explore the significant events and civilizations that shaped world history.",
+    "schedule": "Mondays and Wednesdays, 6:00 PM - 7:30 PM",
+    "available_slots": 15,
+    "price": 60,
+    "is_active": true,
+    "enrollees": "Emma, Oliver, Ava"
+  },
+  {
+    "course_name": "Creative Problem Solving",
+    "instructor": "Jacob Thompson",
+    "description": "Enhance your problem-solving skills and think creatively to overcome challenges.",
+    "schedule": "Fridays, 4:00 PM - 6:00 PM",
+    "available_slots": 10,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Noah, Mia, Benjamin"
+  },
+  {
+    "course_name": "Introduction to Biology",
+    "instructor": "Isabella Parker",
+    "description": "Explore the world of biology and learn about living organisms and their interactions.",
+    "schedule": "Tuesdays and Thursdays, 2:00 PM - 4:00 PM",
+    "available_slots": 20,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Liam, Ava, William"
+  },
+  {
+    "course_name": "Vegetarian Cooking",
+    "instructor": "Sophia Green",
+    "description": "Discover delicious vegetarian recipes and learn cooking techniques for plant-based meals.",
+    "schedule": "Saturdays, 12:00 PM - 2:00 PM",
+    "available_slots": 12,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Ethan, Mia, Grace"
+  },
+  {
+    "course_name": "Screenwriting Workshop",
+    "instructor": "Lucas Turner",
+    "description": "Learn the art of screenwriting and develop compelling scripts for film and television.",
+    "schedule": "Mondays and Wednesdays, 4:00 PM - 6:00 PM",
+    "available_slots": 15,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Oliver, Ava, Benjamin"
+  },
+  {
+    "course_name": "Digital Advertising Strategies",
+    "instructor": "Emily Wilson",
+    "description": "Master the strategies and techniques of digital advertising to reach your target audience.",
+    "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
+    "available_slots": 10,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "Emma, Mia, Alexander"
+  },
+  {
+    "course_name": "Art History",
+    "instructor": "Michael Scott",
+    "description": "Explore the history of art and learn about significant artists and art movements.",
+    "schedule": "Fridays, 10:00 AM - 12:00 PM",
+    "available_slots": 18,
+    "price": 50,
+    "is_active": true,
+    "enrollees": "Elijah, Olivia, Jack"
+  },
+  {
+    "course_name": "Singing Lessons",
+    "instructor": "Sarah Baker",
+    "description": "Develop your vocal skills and learn proper singing techniques.",
+    "schedule": "Wednesdays, 6:00 PM - 8:00 PM",
+    "available_slots": 8,
+    "price": 80,
+    "is_active": true,
+    "enrollees": "Noah, Mia, Alexander"
+  },
+  {
+    "course_name": "Entrepreneurial Finance",
+    "instructor": "Sophia Davis",
+    "description": "Learn about financial management and decision-making for entrepreneurs.",
+    "schedule": "Mondays and Wednesdays, 2:00 PM - 4:00 PM",
+    "available_slots": 15,
+    "price": 90,
+    "is_active": true,
+    "enrollees": "Liam, Ava, Benjamin"
+  },
+  {
+    "course_name": "Fashion Design",
+    "instructor": "Gabriel Wilson",
+    "description": "Unleash your creativity in fashion design and learn to create unique clothing and accessories.",
+    "schedule": "Tuesdays and Thursdays, 4:00 PM - 6:00 PM",
+    "available_slots": 12,
+    "price": 70,
+    "is_active": true,
+    "enrollees": "Oliver, Mia, Grace"
+  },
+  {
+    "course_name": "Negotiation and Conflict Resolution",
+    "instructor": "Emily Cooper",
+    "description": "Develop effective negotiation skills and learn strategies to resolve conflicts.",
+    "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+    "available_slots": 20,
+    "price": 100,
+    "is_active": true,
+    "enrollees": "Ethan, Charlotte, William"
+  }
+]

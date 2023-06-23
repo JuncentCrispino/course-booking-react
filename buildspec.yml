@@ -11,4 +11,4 @@ phases:
     commands:
       - aws s3 rm s3://course.centstudio.xyz/ --recursive
       - aws s3 sync ./dist s3://course.centstudio.xyz/
-      - aws cloudfront create-invalidation --distribution-id --paths /\*
+      # - aws cloudfront create-invalidation --distribution-id --paths /\*

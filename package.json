@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "1.7.15",
     "@hookform/resolvers": "3.1.0",
     "@radix-ui/react-label": "2.0.2",
     "aws-amplify": "5.2.5",
@@ -15,6 +16,7 @@
     "class-variance-authority": "0.6.0",
     "clsx": "1.2.1",
     "framer-motion": "10.12.16",
+    "hamburger-react": "2.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.44.3",

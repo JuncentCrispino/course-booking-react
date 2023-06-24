@@ -5,6 +5,7 @@ import { Button, Pagination } from '@/components';
 import { ICourse } from '@/interfaces';
 import { Link } from 'react-router-dom';
 import WithLoader from '@/components/WithLoader';
+import { motion } from 'framer-motion';
 
 export default function EnrolledCourses() {
   const { user } = useCognito();
@@ -27,7 +28,12 @@ export default function EnrolledCourses() {
   }, [email]);
 
   return (
-    <div className="mx-auto max-w-[1440px] overflow-hidden p-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="mx-auto max-w-7xl overflow-hidden px-6 py-28 md:px-8 md:py-32"
+    >
       <WithLoader isLoading={isLoading}>
         {currentItems.length > 0 ? (
           <>
@@ -41,6 +47,8 @@ export default function EnrolledCourses() {
                   <p className="text-sm font-medium">{course.instructor}</p>
                   <br />
                   <p className="text-sm">{course.description}</p>
+                  <br />
+                  <br />
                   <div className="absolute bottom-5 right-5">
                     <Link
                       to={`/courses/${course.instructor}/${course.course_name}`}
@@ -66,6 +74,6 @@ export default function EnrolledCourses() {
           </div>
         )}
       </WithLoader>
-    </div>
+    </motion.div>
   );
 }

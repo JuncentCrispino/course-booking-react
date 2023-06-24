@@ -9,6 +9,7 @@ import { MdError } from 'react-icons/md';
 import { BiArrowBack } from 'react-icons/bi';
 import { ICourse } from '@/interfaces';
 import WithLoader from '@/components/WithLoader';
+import { motion } from 'framer-motion';
 
 export default function Course() {
   const [isLoading, setIsLoading] = useState(false);
@@ -65,7 +66,12 @@ export default function Course() {
   };
 
   return (
-    <div className="mx-auto grid min-h-[80vh] place-content-center px-5 md:w-[600px]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="mx-auto grid min-h-[100vh] place-content-center px-5 md:w-[600px]"
+    >
       <WithLoader isLoading={isLoading}>
         {course ? (
           <div
@@ -98,6 +104,6 @@ export default function Course() {
           <p className="text-2xl font-bold">Course Not Found.</p>
         )}
       </WithLoader>
-    </div>
+    </motion.div>
   );
 }

@@ -7,6 +7,10 @@ import { executeRecaptcha } from '../captcha';
 import { H3, Label, Input, Error, Button } from '@/components';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCognito } from '@/context/AuthContext';
+import { motion } from 'framer-motion';
+import notify from '@/components/notify';
+import { RiErrorWarningFill } from 'react-icons/ri';
+
 const validationSchema = yup.object().shape({
   email: yup.string().required('Email is required.'),
   password: yup.string().required('Email is required.'),
@@ -49,16 +53,40 @@ export default function Login() {
       .then((data) => {
         setUser(data);
         navigate('/courses');
+        notify({
+          message: 'Welcome to Course Booking Demo App!',
+          icon: <RiErrorWarningFill size={30} />,
+          status: 'Success',
+        });
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        let message: string;
+        if (typeof err === 'string') {
+          message = err;
+        } else if (typeof err?.message === 'string') {
+          message = err.message;
+        } else {
+          message = 'Sorry. Something went wrong. Please try again later.';
+        }
+        notify({
+          message,
+          icon: <RiErrorWarningFill size={30} />,
+          status: 'Error',
+        });
+      })
       .finally(() => setIsLoading(false));
   };
 
   return (
-    <main className="mx-auto flex max-h-fit min-h-[90vh] max-w-md items-center p-5">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="mx-auto flex max-h-fit min-h-[100vh] max-w-md items-center p-5"
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-12 py-8 shadow-lg"
+        className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-6 py-8 shadow-lg md:px-12"
       >
         <H3>SIGN IN</H3>
         <Controller
@@ -116,6 +144,6 @@ export default function Login() {
           </Link>
         </p>
       </form>
-    </main>
+    </motion.main>
   );
 }

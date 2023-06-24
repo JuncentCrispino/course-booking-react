@@ -5,6 +5,7 @@ import { Button, Error, H3, Input, Label } from '@/components';
 import { Auth } from 'aws-amplify';
 import { signupStore } from '@/store';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const validationSchema = yup.object().shape({
   email: yup.string().email().required('Email is required'),
@@ -39,7 +40,12 @@ export default function ConfirmSignup() {
   };
 
   return (
-    <main className="mx-auto flex max-h-fit min-h-[90vh] max-w-md items-center p-5">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="mx-auto flex max-h-fit min-h-[90vh] max-w-md items-center p-5"
+    >
       <section className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-12 py-8 shadow-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <H3>CONFIRM SIGN UP</H3>
@@ -88,6 +94,6 @@ export default function ConfirmSignup() {
           </Button>
         </form>
       </section>
-    </main>
+    </motion.main>
   );
 }

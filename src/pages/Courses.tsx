@@ -3,6 +3,7 @@ import { coursesStore } from '@/store';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import WithLoader from '@/components/WithLoader';
+import { motion } from 'framer-motion';
 
 export default function Courses() {
   const [courses, fetchCourses, isLoading] = coursesStore((state) => [
@@ -22,7 +23,12 @@ export default function Courses() {
   }, [fetchCourses]);
 
   return (
-    <div className="mx-auto max-w-[1440px] overflow-hidden p-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="mx-auto max-w-7xl overflow-hidden px-6 py-28 md:px-8 md:py-32"
+    >
       <WithLoader isLoading={isLoading}>
         {currentItems.length > 0 ? (
           <>
@@ -63,6 +69,6 @@ export default function Courses() {
           </div>
         )}
       </WithLoader>
-    </div>
+    </motion.div>
   );
 }

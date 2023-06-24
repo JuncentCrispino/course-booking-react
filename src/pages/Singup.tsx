@@ -7,6 +7,7 @@ import { executeRecaptcha } from '../captcha';
 import { Link, useNavigate } from 'react-router-dom';
 import { Input, Label, Error, Button, H3 } from '@/components';
 import { signupStore } from '@/store';
+import { motion } from 'framer-motion';
 
 const validationSchema = yup.object().shape({
   email: yup.string().required('Email is required.'),
@@ -91,7 +92,12 @@ export default function Singup() {
   };
 
   return (
-    <main className="mx-auto flex max-h-fit min-h-[90vh] max-w-md items-center p-5">
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="mx-auto flex min-h-[100vh] max-w-md items-center p-5"
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-12 py-8 shadow-lg"
@@ -233,6 +239,6 @@ export default function Singup() {
           </Link>
         </p>
       </form>
-    </main>
+    </motion.main>
   );
 }

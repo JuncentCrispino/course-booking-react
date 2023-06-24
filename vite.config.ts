@@ -5,9 +5,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), eslintPlugin()],
-  define: {
-    global: {},
-  },
+  // define: {
+  //   global: {},
+  // },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

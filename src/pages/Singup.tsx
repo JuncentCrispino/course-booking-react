@@ -11,7 +11,6 @@ import { motion } from 'framer-motion';
 import SmLoader from '@/components/SmLoader';
 import notify from '@/components/notify';
 import { RiErrorWarningFill } from 'react-icons/ri';
-import { AiFillCheckCircle } from 'react-icons/ai';
 
 const validationSchema = yup.object().shape({
   email: yup.string().required('Email is required.'),

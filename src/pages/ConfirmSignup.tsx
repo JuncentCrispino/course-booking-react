@@ -6,6 +6,11 @@ import { Auth } from 'aws-amplify';
 import { signupStore } from '@/store';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import notify from '@/components/notify';
+import { RiErrorWarningFill } from 'react-icons/ri';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import SmLoader from '@/components/SmLoader';
 
 const validationSchema = yup.object().shape({
   email: yup.string().email().required('Email is required'),
@@ -13,6 +18,7 @@ const validationSchema = yup.object().shape({
 });
 export default function ConfirmSignup() {
   const navigate = useNavigate();
+  const [isConfirming, setIsConfirming] = useState(false);
   const {
     control,
     handleSubmit,
@@ -29,14 +35,34 @@ export default function ConfirmSignup() {
   });
 
   const onSubmit = async ({ email, code }: { email: string; code: string }) => {
-    try {
-      const data = await Auth.confirmSignUp(email, code.split(' ').join(''));
-      if (data === 'SUCCESS') {
-        return navigate('/signin');
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    Auth.confirmSignUp(email, code.split(' ').join(''))
+      .then((data) => {
+        if (data === 'SUCCESS') {
+          navigate('/signin');
+
+          notify({
+            message: 'Successfully confirmed email.',
+            icon: <AiFillCheckCircle size={30} />,
+            status: 'Success',
+          });
+        }
+      })
+      .catch((err) => {
+        let message: string;
+        if (typeof err === 'string') {
+          message = err;
+        } else if (typeof err?.message === 'string') {
+          message = err.message;
+        } else {
+          message = 'Sorry. Something went wrong. Please try again later.';
+        }
+        notify({
+          message,
+          icon: <RiErrorWarningFill size={30} />,
+          status: 'Error',
+        });
+      })
+      .finally(() => setIsConfirming(false));
   };
 
   return (
@@ -46,7 +72,7 @@ export default function ConfirmSignup() {
       exit={{ opacity: 0 }}
       className="mx-auto flex max-h-fit min-h-[90vh] max-w-md items-center p-5"
     >
-      <section className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-12 py-8 shadow-lg">
+      <section className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-6 py-8 shadow-lg md:px-12">
         <form onSubmit={handleSubmit(onSubmit)}>
           <H3>CONFIRM SIGN UP</H3>
           <Controller
@@ -89,9 +115,18 @@ export default function ConfirmSignup() {
               </Label>
             )}
           />
-          <Button type="submit" className="mt-5">
-            CONFIRM
-          </Button>
+          <div className="flex flex-col">
+            <Button type="submit" className="mt-5">
+              {!isConfirming ? (
+                'CONFIRM'
+              ) : (
+                <div className="flex items-center gap-3">
+                  CONFIRMING
+                  <SmLoader />
+                </div>
+              )}
+            </Button>
+          </div>
         </form>
       </section>
     </motion.main>

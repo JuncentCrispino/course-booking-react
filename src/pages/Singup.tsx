@@ -8,6 +8,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Input, Label, Error, Button, H3 } from '@/components';
 import { signupStore } from '@/store';
 import { motion } from 'framer-motion';
+import SmLoader from '@/components/SmLoader';
+import notify from '@/components/notify';
+import { RiErrorWarningFill } from 'react-icons/ri';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 const validationSchema = yup.object().shape({
   email: yup.string().required('Email is required.'),
@@ -66,29 +70,42 @@ export default function Singup() {
     phone_number,
   }: ISignupPayload) => {
     setIsLoading(true);
-    try {
-      const data = await Auth.signUp({
-        username: email,
-        password: password,
-        attributes: {
-          email,
-          family_name,
-          given_name,
-          phone_number,
-        },
-        validationData: {
-          recaptcha: await executeRecaptcha(),
-        },
-      });
-      setEmail(email);
-      if (data.userConfirmed === false) {
-        return navigate('/signup/confirm/');
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
+    Auth.signUp({
+      username: email,
+      password: password,
+      attributes: {
+        email,
+        family_name,
+        given_name,
+        phone_number,
+      },
+      validationData: {
+        recaptcha: await executeRecaptcha(),
+      },
+    })
+      .then((data) => {
+        setEmail(email);
+        if (data.userConfirmed === false) {
+          return navigate('/signup/confirm/');
+        }
+      })
+      .catch((err) => {
+        let message: string;
+
+        if (typeof err === 'string') {
+          message = err;
+        } else if (typeof err?.message === 'string') {
+          message = err.message;
+        } else {
+          message = 'Sorry. Something went wrong. Please try again later.';
+        }
+        notify({
+          message,
+          icon: <RiErrorWarningFill size={30} />,
+          status: 'Error',
+        });
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -96,11 +113,11 @@ export default function Singup() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="mx-auto flex min-h-[100vh] max-w-md items-center p-5"
+      className="mx-auto flex min-h-[100vh] max-w-md items-center p-5 pt-20 md:pt-5"
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-12 py-8 shadow-lg"
+        className="flex w-full flex-col gap-3 rounded-lg border-2 border-primary/75 px-6 py-8 shadow-lg md:px-12"
       >
         <H3>SIGN UP</H3>
 
@@ -230,7 +247,14 @@ export default function Singup() {
         />
 
         <Button type="submit" className="mt-5">
-          {!isLoading ? 'SIGN UP' : 'SIGNING UP...'}
+          {!isLoading ? (
+            'SIGN UP'
+          ) : (
+            <div className="flex items-center gap-3">
+              SIGNING UP
+              <SmLoader />
+            </div>
+          )}
         </Button>
         <p className="text-sm text-slate-600">
           Already have an account?{' '}

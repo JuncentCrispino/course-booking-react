@@ -13,6 +13,7 @@ module.exports = {
       outlineColor: hex,
       ringColor: hex,
       borderColor: hex,
+      fill: hex,
     },
   },
   plugins: [],

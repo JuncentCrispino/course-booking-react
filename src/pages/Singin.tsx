@@ -10,6 +10,8 @@ import { useCognito } from '@/context/AuthContext';
 import { motion } from 'framer-motion';
 import notify from '@/components/notify';
 import { RiErrorWarningFill } from 'react-icons/ri';
+import { AiFillCheckCircle } from 'react-icons/ai';
+import SmLoader from '@/components/SmLoader';
 
 const validationSchema = yup.object().shape({
   email: yup.string().required('Email is required.'),
@@ -55,7 +57,7 @@ export default function Login() {
         navigate('/courses');
         notify({
           message: 'Welcome to Course Booking Demo App!',
-          icon: <RiErrorWarningFill size={30} />,
+          icon: <AiFillCheckCircle size={30} />,
           status: 'Success',
         });
       })
@@ -134,7 +136,14 @@ export default function Login() {
         />
 
         <Button type="submit" className="mt-5">
-          {!isLoading ? 'SIGN IN' : 'SIGNING IN...'}
+          {!isLoading ? (
+            'SIGN IN'
+          ) : (
+            <div className="flex items-center gap-3">
+              SIGNING IN
+              <SmLoader />
+            </div>
+          )}
         </Button>
 
         <p className="text-sm text-slate-600">

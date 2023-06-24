@@ -85,7 +85,7 @@ export default function Layout() {
                             key={link.path}
                             className={({ isActive }) =>
                               clsx(
-                                isActive && 'font-bold',
+                                isActive && 'bg-secondary font-bold',
                                 'rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-secondary',
                               )
                             }

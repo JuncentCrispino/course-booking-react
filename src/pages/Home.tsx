@@ -13,26 +13,28 @@ export default function Home() {
         <p>
           Thank you for visiting my demo website. This platform serves as a
           streamlined course booking website, offering users the ability to sign
-          up, sign in, view available courses, and enroll in their desired
-          programs. The website is built using an array of serverless services
-          provided by Amazon Web Services (AWS).
+          up, sign in, and confirm the account through email sent code, view
+          available courses, and enroll in their desired programs. The website
+          is built using an array of serverless services provided by Amazon Web
+          Services (AWS).
         </p>
         <p>
           The underlying infrastructure of this website leverages DynamoDB as
           the database, specifically chosen for its compatibility with the
-          serverless environment. Initially, I experimented with MongoDB but
-          decided to migrate to DynamoDB to optimize scalability, allowing for
-          seamless expansion as demand increases.
+          serverless environment. Initially, I initially made it with MongoDB
+          but decided to migrate to DynamoDB to optimize scalability, allowing
+          for seamless expansion as demand increases.
         </p>
         <p>
           To ensure secure user authentication and authorization, I implemented
           the AWS Cognito service, which also serves as an authorizer for
-          private Lambda functions. Prior to signing in or registering, users
-          are prompted to complete a Google Captcha verification process. Upon
-          successful validation, Cognito saves the user to the Cognito Userpool,
-          with email confirmation required for signing in. Subsequently, a
-          Lambda function is triggered to capture the user&apos;s information,
-          which is then stored in DynamoDB.
+          private Lambda functions. Prior to signing in or registering, an event
+          is triggered to check for the invisible recaptcha response through
+          Google Captcha verification process. Upon successful validation,
+          Cognito saves the user to the Cognito Userpool, with email
+          confirmation required for signing in. Subsequently, a Lambda function
+          is triggered to capture the user&apos;s information, which is then
+          stored in DynamoDB.
         </p>
         <p>
           The compute service driving this website is AWS Lambda, seamlessly

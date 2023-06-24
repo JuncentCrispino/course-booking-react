@@ -10,9 +10,11 @@ import { BiArrowBack } from 'react-icons/bi';
 import { ICourse } from '@/interfaces';
 import WithLoader from '@/components/WithLoader';
 import { motion } from 'framer-motion';
+import SmLoader from '@/components/SmLoader';
 
 export default function Course() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isEnrolling, setIsEnrolling] = useState(false);
   const { instructor, course_id } = useParams();
   const { user } = useCognito();
   const navigate = useNavigate();
@@ -31,7 +33,7 @@ export default function Course() {
     if (!user) {
       navigate('/signin');
     }
-
+    setIsEnrolling(true);
     const payload = {
       courseInfo: {
         instructor: course?.instructor,
@@ -62,7 +64,8 @@ export default function Course() {
           icon: <MdError size={30} />,
           status: 'Error',
         });
-      });
+      })
+      .finally(() => setIsEnrolling(false));
   };
 
   return (
@@ -91,7 +94,16 @@ export default function Course() {
             <br />
             <br />
             <div className="absolute bottom-5 right-5">
-              <Button onClick={onEnroll}>Enroll</Button>
+              <Button onClick={onEnroll}>
+                {!isEnrolling ? (
+                  'ENROLL'
+                ) : (
+                  <div className="flex items-center gap-3">
+                    ENROLLING
+                    <SmLoader />
+                  </div>
+                )}
+              </Button>
             </div>
             <button
               onClick={() => navigate(-1)}

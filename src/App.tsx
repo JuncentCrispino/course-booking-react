@@ -20,10 +20,7 @@ const app = createBrowserRouter([
         element: <Home />,
         index: true,
       },
-      {
-        path: '/signup/confirm',
-        element: <ConfirmSignup />,
-      },
+
       {
         path: '/courses',
         element: <Courses />,
@@ -57,6 +54,10 @@ const app = createBrowserRouter([
           {
             path: '/signup',
             element: <Singup />,
+          },
+          {
+            path: '/signup/confirm',
+            element: <ConfirmSignup />,
           },
         ],
       },

@@ -9,6 +9,5 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 rm s3://course.centstudio.xyz/ --recursive
-      - aws s3 sync ./dist s3://course.centstudio.xyz/
+      - aws s3 cp ./dist s3://course.centstudio.xyz/ --recursive
       - aws cloudfront create-invalidation --distribution-id E2WNCQN126W76A --paths /\*
